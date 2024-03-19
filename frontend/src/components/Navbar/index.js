@@ -11,7 +11,7 @@ const Navbar = () => {
                 <FaBars />
             </ToggleButton>
             <NavItems show={showNav}>
-                <Link to="/signup">Cadastro de Usuários</Link>
+                <Link to="/">Cadastro de Usuários</Link>
                 <Link to="/usuarios">Usuários</Link>
                 <Link to="/produtos">Lista de Produtos</Link>
                 <Link to="/produto">Cadastro de Produto</Link>

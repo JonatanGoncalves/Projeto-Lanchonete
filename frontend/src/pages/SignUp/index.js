@@ -15,14 +15,14 @@ const SignUp = () => {
     useEffect(() => {
         if (!id) return;
 
-        async function getData(){
-            try{
+        async function getData() {
+            try {
                 const { data } = await api.get(`/usuarios/${id}`);
                 setEmail(data.email);
                 setSenha(data.senha);
                 setTipo(data.tipo);
-            }catch(err){
-                setError("Houve um problema ao carregar os dados do usuario: "+err);
+            } catch (err) {
+                setError("Houve um problema ao carregar os dados do usuario: " + err);
             }
         }
         getData();
@@ -34,14 +34,14 @@ const SignUp = () => {
             setError("Preencha todos os dados para se cadastrar");
         } else {
             try {
-                if (!id){
+                if (!id) {
                     await api.post("/signup", { email, senha, tipo });
-                    navigate("/");
+                    navigate("/login");
                 } else {
                     await api.put(`/usuarios/${id}`, { email, senha, tipo });
                     navigate(-1);
                 }
-                
+
             } catch (err) {
                 console.log(err);
                 setError("Ocorreu um erro ao registrar sua conta.")
@@ -72,7 +72,8 @@ const SignUp = () => {
                     onChange={e => setTipo(e.target.value)}
                 />
                 <button type="submit">Cadastro de Usuário</button>
-                <Link to="/">Fazer Login</Link>
+                <br></br>
+                <Link to="/login">Possui uma Conta - Logar</Link>
             </Form>
         </Container>
     )

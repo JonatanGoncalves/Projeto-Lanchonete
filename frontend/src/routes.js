@@ -38,8 +38,8 @@ const AppPage = () => {
 const Rotas = () => (
     <Router>
         <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/" element={<SignUpPage />} />
+            <Route path="/Login" element={<LoginPage />} />
             <Route path="/logout" element={<LogOutPage />} />
             <Route path="/app" element={<AppPage />} />
             <Route path="/usuarios" element={<UsuariosPage />} />
